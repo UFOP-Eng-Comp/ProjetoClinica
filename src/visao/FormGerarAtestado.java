@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 package visao;
+
+import com.itextpdf.text.Chunk;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Header;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -33,24 +36,24 @@ public class FormGerarAtestado extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabelEscopo = new javax.swing.JLabel();
         jLabelAtestado1 = new javax.swing.JLabel();
-        jFormattedTextFieldNome = new javax.swing.JFormattedTextField();
+        jNome = new javax.swing.JFormattedTextField();
         jLabelAtestado2 = new javax.swing.JLabel();
-        jFormattedTextFieldCPF = new javax.swing.JFormattedTextField();
+        jCpf = new javax.swing.JFormattedTextField();
         jLabelAtestado3 = new javax.swing.JLabel();
-        jFormattedTextFieldDiasNumero = new javax.swing.JFormattedTextField();
-        jFormattedTextFieldDiasLetras = new javax.swing.JFormattedTextField();
+        jNDia = new javax.swing.JFormattedTextField();
+        jTDia = new javax.swing.JFormattedTextField();
         jLabelAtestado4 = new javax.swing.JLabel();
         jLabelAtestado5 = new javax.swing.JLabel();
         jLabelAtestado6 = new javax.swing.JLabel();
         jLabelAtestado7 = new javax.swing.JLabel();
         jLabelAtestado8 = new javax.swing.JLabel();
-        jFormattedTextFieldCodigoCID = new javax.swing.JFormattedTextField();
+        jCID = new javax.swing.JFormattedTextField();
         jLabelData1 = new javax.swing.JLabel();
-        jFormattedTextFieldData3 = new javax.swing.JFormattedTextField();
+        dAno = new javax.swing.JFormattedTextField();
         jLabelData2 = new javax.swing.JLabel();
-        jFormattedTextFieldData2 = new javax.swing.JFormattedTextField();
+        dMes = new javax.swing.JFormattedTextField();
         jLabelData3 = new javax.swing.JLabel();
-        jFormattedTextFieldData1 = new javax.swing.JFormattedTextField();
+        dDia = new javax.swing.JFormattedTextField();
         jLabelAssinatura = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButtonprint = new javax.swing.JButton();
@@ -132,22 +135,22 @@ public class FormGerarAtestado extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabelAtestado8)
                                 .addGap(23, 23, 23)
-                                .addComponent(jFormattedTextFieldCodigoCID, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jCID, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jButtonprint)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabelAtestado2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabelAtestado3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jFormattedTextFieldDiasNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jNDia, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabelAtestado4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jFormattedTextFieldDiasLetras)
+                                        .addComponent(jTDia)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabelAtestado5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -155,7 +158,7 @@ public class FormGerarAtestado extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabelAtestado1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jFormattedTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jNome, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap(29, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,15 +166,15 @@ public class FormGerarAtestado extends javax.swing.JFrame {
                         .addGap(84, 84, 84)
                         .addComponent(jLabelData1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jFormattedTextFieldData1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dDia, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelData2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jFormattedTextFieldData2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dMes, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelData3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jFormattedTextFieldData3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dAno, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(92, 92, 92)
                         .addComponent(jLabelAssinatura))
@@ -187,14 +190,14 @@ public class FormGerarAtestado extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAtestado1)
-                    .addComponent(jFormattedTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAtestado2)
-                    .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelAtestado3)
-                    .addComponent(jFormattedTextFieldDiasNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextFieldDiasLetras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jNDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelAtestado4)
                     .addComponent(jLabelAtestado5)
                     .addComponent(jLabelAtestado6))
@@ -203,15 +206,15 @@ public class FormGerarAtestado extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAtestado8)
-                    .addComponent(jFormattedTextFieldCodigoCID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelData1)
                     .addComponent(jLabelData2)
-                    .addComponent(jFormattedTextFieldData2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextFieldData3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelData3)
-                    .addComponent(jFormattedTextFieldData1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
                 .addComponent(jLabelAssinatura)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -252,20 +255,36 @@ public class FormGerarAtestado extends javax.swing.JFrame {
 
     private void jButtonprintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonprintActionPerformed
         Document document = new Document();
-          try {
-              PdfWriter.getInstance(document, new FileOutputStream("C:\\Atestado.pdf"));
-              document.open();
-              
-              // adicionando um parágrafo no documento
-               document.add(new Paragraph("Gerando PDF - Java"));
-}
-          catch(DocumentException de) {
-              System.err.println(de.getMessage());
-          }
-          catch(IOException ioe) {
-              System.err.println(ioe.getMessage());
-          }
-          document.close();
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("Atestado.pdf"));
+            document.open();
+
+            // adicionando um parágrafo no documento
+            /*
+            Atesto que o Sr(a). jNome
+            portador do CPF nº jCpf
+            necessita de jNDia ( jTDia )
+            dias de afastamento do trabalho, a partir desta data, por motivo de doença.
+            
+            CÓDIGO CID: jCID
+            João Monlevade - MG dDia de dMes de dAno
+            
+            */
+            document.add(new Paragraph("Atesto que o Sr(a) "+jNome.getText()));
+            document.add(new Paragraph("portador do CPF nº "+jCpf.getText() ));
+            document.add(new Paragraph("necessita de "+jNDia.getText()));
+            document.add(new Paragraph("dias de afastamento do trabalho, a partir desta data, por motivo de doença."));
+            document.add(new Paragraph("CÓDIGO CID: jCID"+jCID.getText()));
+            document.add(new Paragraph("João Monlevade - MG "+dDia.getText()+ "de "+dMes.getText()+ "de "+dAno.getText()));
+            
+            }
+          catch (DocumentException de) {
+            System.err.println(de.getMessage());
+        } catch (IOException ioe) {
+            System.err.println(ioe.getMessage());
+        }
+        document.close();
+        this.dispose();
     }//GEN-LAST:event_jButtonprintActionPerformed
 
     /**
@@ -304,15 +323,12 @@ public class FormGerarAtestado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFormattedTextField dAno;
+    private javax.swing.JFormattedTextField dDia;
+    private javax.swing.JFormattedTextField dMes;
     private javax.swing.JButton jButtonprint;
-    private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
-    private javax.swing.JFormattedTextField jFormattedTextFieldCodigoCID;
-    private javax.swing.JFormattedTextField jFormattedTextFieldData1;
-    private javax.swing.JFormattedTextField jFormattedTextFieldData2;
-    private javax.swing.JFormattedTextField jFormattedTextFieldData3;
-    private javax.swing.JFormattedTextField jFormattedTextFieldDiasLetras;
-    private javax.swing.JFormattedTextField jFormattedTextFieldDiasNumero;
-    private javax.swing.JFormattedTextField jFormattedTextFieldNome;
+    private javax.swing.JFormattedTextField jCID;
+    private javax.swing.JFormattedTextField jCpf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAssinatura;
     private javax.swing.JLabel jLabelAtestado1;
@@ -328,7 +344,10 @@ public class FormGerarAtestado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelData3;
     private javax.swing.JLabel jLabelEscopo;
     private javax.swing.JLabel jLabelGA;
+    private javax.swing.JFormattedTextField jNDia;
+    private javax.swing.JFormattedTextField jNome;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JFormattedTextField jTDia;
     // End of variables declaration//GEN-END:variables
 }
