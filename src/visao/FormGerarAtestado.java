@@ -271,11 +271,20 @@ public class FormGerarAtestado extends javax.swing.JFrame {
             
             */
             document.add(new Paragraph("Atesto que o Sr(a) "+jNome.getText()));
-            document.add(new Paragraph("portador do CPF nº "+jCpf.getText() ));
-            document.add(new Paragraph("necessita de "+jNDia.getText()));
-            document.add(new Paragraph("dias de afastamento do trabalho, a partir desta data, por motivo de doença."));
-            document.add(new Paragraph("CÓDIGO CID: jCID"+jCID.getText()));
-            document.add(new Paragraph("João Monlevade - MG "+dDia.getText()+ "de "+dMes.getText()+ "de "+dAno.getText()));
+            document.add(new Paragraph("portador do CPF nº "+jCpf.getText() + " necessita de "+jNDia.getText()+" dias de afastamento do trabalho, a partir desta data, por motivo de doença."));
+            document.add( Chunk.NEWLINE );
+            document.add( Chunk.NEWLINE );
+            document.add( Chunk.NEWLINE );
+            document.add(new Paragraph("CÓDIGO CID: "+jCID.getText()));
+            document.add( Chunk.NEWLINE );
+            document.add( Chunk.NEWLINE );
+            document.add( Chunk.NEWLINE );
+            document.add(new Paragraph("João Monlevade - MG "+dDia.getText()+ " de "+dMes.getText()+ " de "+dAno.getText()));
+            document.add( Chunk.NEWLINE );
+            document.add( Chunk.NEWLINE );
+            document.add(new Paragraph("______________________________________________"));
+            document.add(new Paragraph("ASSINATURA DO MÉDICO SOBRE CARIMBO E C.R.M"));
+            document.add( Chunk.NEWLINE );
             
             }
           catch (DocumentException de) {
