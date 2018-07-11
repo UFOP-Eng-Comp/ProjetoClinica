@@ -10,12 +10,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Header;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.util.Calendar;
-import java.util.Date;
-import javafx.scene.chart.PieChart;
 
 public class FormGerarAtestado extends javax.swing.JFrame {
 
