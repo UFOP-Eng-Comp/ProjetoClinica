@@ -13,6 +13,9 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Header;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.util.Calendar;
+import java.util.Date;
+import javafx.scene.chart.PieChart;
 
 public class FormGerarAtestado extends javax.swing.JFrame {
 
@@ -256,7 +259,9 @@ public class FormGerarAtestado extends javax.swing.JFrame {
     private void jButtonprintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonprintActionPerformed
         Document document = new Document();
         try {
-            PdfWriter.getInstance(document, new FileOutputStream("Atestado.pdf"));
+            Calendar data = Calendar.getInstance();
+            
+            PdfWriter.getInstance(document, new FileOutputStream("Atestado-"+data.get(Calendar.DAY_OF_MONTH)+"--"+data.get(Calendar.HOUR)+"-"+data.get(Calendar.MINUTE)+"-"+data.get(Calendar.SECOND)+".pdf"));
             document.open();
 
             // adicionando um parágrafo no documento
